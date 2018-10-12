@@ -1,0 +1,416 @@
+{
+	"status": true,
+	"operation": "Query Operation Log",
+	"records": [{
+			"attributes": {
+				"operationInstanceGuid": "11f0ccfd-b4b3-4261-afbe-717600355c5a",
+				"operationGuid": "f92d6e62-99b0-4820-8cc1-1071349861a9",
+				"operationName": "api.resource.order-customer-insert.onFailure",
+				"operationStatusId": 4,
+				"operationStatus": "SUCCESS",
+				"environmentId": "290462",
+				"environmentName": "development",
+				"agentId": "162928",
+				"agentName": "Jitterbit Cloud Agent 3_1_4",
+				"projectName": "CORE_API",
+				"message": "The operation \"api.resource.order-customer-insert.onFailure\" completed successfully.",
+				"operationEnteredTimestamp": 1532349725000,
+				"operationStartedTimestamp": 1532349725000,
+				"operationStatusTimestamp": 1532349725000,
+				"debugModeEnabled": false,
+				"debugFilePresent": false
+			},
+			"childRecords": []
+		}, {
+			"attributes": {
+				"operationInstanceGuid": "14f9e2b8-fe65-4534-969d-546825ac2d55",
+				"operationGuid": "096d8457-d58c-4af9-bc4e-4a01946c27c8",
+				"operationName": "common.onFailure",
+				"operationStatusId": 5,
+				"operationStatus": "SUCCESS WITH INFO",
+				"environmentId": "290462",
+				"environmentName": "development",
+				"agentId": "162928",
+				"agentName": "Jitterbit Cloud Agent 3_1_4",
+				"projectName": "CORE_API",
+				"message": "The operation \"common.onFailure\" completed successfully.",
+				"operationEnteredTimestamp": 1532349724000,
+				"operationStartedTimestamp": 1532349724000,
+				"operationStatusTimestamp": 1532349724000,
+				"debugModeEnabled": false,
+				"debugFilePresent": false
+			},
+			"childRecords": []
+		}, {
+			"attributes": {
+				"operationInstanceGuid": "2ccabbfd-281c-423f-b50e-421330e67d4c",
+				"parentInstanceGuid": "f869de09-169f-4365-a68c-353a4481804a",
+				"operationGuid": "1686dd3c-794c-4f6e-b35f-7cf89f65db7b",
+				"operationName": "api.resource.order-customer-insert.createOrder.dumpRequest",
+				"operationStatusId": 7,
+				"operationStatus": "ERROR",
+				"environmentId": "290462",
+				"environmentName": "development",
+				"agentId": "162928",
+				"agentName": "Jitterbit Cloud Agent 3_1_4",
+				"projectName": "CORE_API",
+				"message": "The operation \"api.resource.order-customer-insert.createOrder.dumpRequest\" failed.",
+				"operationEnteredTimestamp": 1532349724000,
+				"operationStartedTimestamp": 1532349724000,
+				"operationStatusTimestamp": 1532349724000,
+				"debugModeEnabled": false,
+				"debugFilePresent": false
+			},
+			"childRecords": []
+		}, {
+			"attributes": {
+				"operationInstanceGuid": "48c645be-24ae-4286-90ca-41fc8fb14dd6",
+				"parentInstanceGuid": "9e9d2fff-550a-489b-b0d3-7eb1f2d652de",
+				"operationGuid": "5177359e-6dcc-4122-98b1-7c5f5f45fcad",
+				"operationName": "api.resource.order-customer-insert.process",
+				"operationStatusId": 7,
+				"operationStatus": "ERROR",
+				"environmentId": "290462",
+				"environmentName": "development",
+				"agentId": "162928",
+				"agentName": "Jitterbit Cloud Agent 3_1_4",
+				"projectName": "CORE_API",
+				"message": "The operation \"api.resource.order-customer-insert.process\" failed.",
+				"operationEnteredTimestamp": 1532349724000,
+				"operationStartedTimestamp": 1532349724000,
+				"operationStatusTimestamp": 1532349725000,
+				"debugModeEnabled": false,
+				"debugFilePresent": false
+			},
+			"childRecords": []
+		}, {
+			"attributes": {
+				"operationInstanceGuid": "f869de09-169f-4365-a68c-353a4481804a",
+				"parentInstanceGuid": "48c645be-24ae-4286-90ca-41fc8fb14dd6",
+				"operationGuid": "b1b4b94b-5d97-4565-b6ea-3a76473cc562",
+				"operationName": "api.resource.order-customer-insert.createOrder",
+				"operationStatusId": 7,
+				"operationStatus": "ERROR",
+				"environmentId": "290462",
+				"environmentName": "development",
+				"agentId": "162928",
+				"agentName": "Jitterbit Cloud Agent 3_1_4",
+				"projectName": "CORE_API",
+				"message": "The operation \"api.resource.order-customer-insert.createOrder\" failed.",
+				"operationEnteredTimestamp": 1532349724000,
+				"operationStartedTimestamp": 1532349724000,
+				"operationStatusTimestamp": 1532349724000,
+				"debugModeEnabled": false,
+				"debugFilePresent": false
+			},
+			"childRecords": []
+		}, {
+			"attributes": {
+				"operationInstanceGuid": "55e3f716-aa3d-4a8c-86ee-ddac3d2da869",
+				"parentInstanceGuid": "c4da8c1c-e1f0-4ba1-9232-b79755b65f7b",
+				"operationGuid": "5177359e-6dcc-4122-98b1-7c5f5f45fcad",
+				"operationName": "api.resource.order-customer-insert.process",
+				"operationStatusId": 7,
+				"operationStatus": "ERROR",
+				"environmentId": "290462",
+				"environmentName": "development",
+				"agentId": "110028",
+				"agentName": "Jitterbit Cloud Agent 3_1_3",
+				"projectName": "CORE_API",
+				"message": "The operation \"api.resource.order-customer-insert.process\" failed.",
+				"operationEnteredTimestamp": 1532349723000,
+				"operationStartedTimestamp": 1532349723000,
+				"operationStatusTimestamp": 1532349723000,
+				"debugModeEnabled": false,
+				"debugFilePresent": false
+			},
+			"childRecords": []
+		}, {
+			"attributes": {
+				"operationInstanceGuid": "a86b5aa8-245d-455a-8a3c-b3b9c6c21fa6",
+				"operationGuid": "f92d6e62-99b0-4820-8cc1-1071349861a9",
+				"operationName": "api.resource.order-customer-insert.onFailure",
+				"operationStatusId": 4,
+				"operationStatus": "SUCCESS",
+				"environmentId": "290462",
+				"environmentName": "development",
+				"agentId": "110028",
+				"agentName": "Jitterbit Cloud Agent 3_1_3",
+				"projectName": "CORE_API",
+				"message": "The operation \"api.resource.order-customer-insert.onFailure\" completed successfully.",
+				"operationEnteredTimestamp": 1532349723000,
+				"operationStartedTimestamp": 1532349723000,
+				"operationStatusTimestamp": 1532349723000,
+				"debugModeEnabled": false,
+				"debugFilePresent": false
+			},
+			"childRecords": []
+		}, {
+			"attributes": {
+				"operationInstanceGuid": "ad7c1649-9622-4118-aae1-a72efecb2a01",
+				"operationGuid": "f92d6e62-99b0-4820-8cc1-1071349861a9",
+				"operationName": "api.resource.order-customer-insert.onFailure",
+				"operationStatusId": 4,
+				"operationStatus": "SUCCESS",
+				"environmentId": "290462",
+				"environmentName": "development",
+				"agentId": "110028",
+				"agentName": "Jitterbit Cloud Agent 3_1_3",
+				"projectName": "CORE_API",
+				"message": "The operation \"api.resource.order-customer-insert.onFailure\" completed successfully.",
+				"operationEnteredTimestamp": 1532349723000,
+				"operationStartedTimestamp": 1532349723000,
+				"operationStatusTimestamp": 1532349723000,
+				"debugModeEnabled": false,
+				"debugFilePresent": false
+			},
+			"childRecords": []
+		}, {
+			"attributes": {
+				"operationInstanceGuid": "ceb7270c-8784-469f-b93c-2d22016affb2",
+				"parentInstanceGuid": "ad81d356-a600-4987-a839-a05583421416",
+				"operationGuid": "5177359e-6dcc-4122-98b1-7c5f5f45fcad",
+				"operationName": "api.resource.order-customer-insert.process",
+				"operationStatusId": 7,
+				"operationStatus": "ERROR",
+				"environmentId": "290462",
+				"environmentName": "development",
+				"agentId": "110028",
+				"agentName": "Jitterbit Cloud Agent 3_1_3",
+				"projectName": "CORE_API",
+				"message": "The operation \"api.resource.order-customer-insert.process\" failed.",
+				"operationEnteredTimestamp": 1532349723000,
+				"operationStartedTimestamp": 1532349723000,
+				"operationStatusTimestamp": 1532349723000,
+				"debugModeEnabled": false,
+				"debugFilePresent": false
+			},
+			"childRecords": []
+		}, {
+			"attributes": {
+				"operationInstanceGuid": "d5d45a4a-6378-45d7-9c1a-0d5047a7dc1b",
+				"parentInstanceGuid": "9351acec-4a14-4691-b6f1-d904d7dfff77",
+				"operationGuid": "1686dd3c-794c-4f6e-b35f-7cf89f65db7b",
+				"operationName": "api.resource.order-customer-insert.createOrder.dumpRequest",
+				"operationStatusId": 7,
+				"operationStatus": "ERROR",
+				"environmentId": "290462",
+				"environmentName": "development",
+				"agentId": "110028",
+				"agentName": "Jitterbit Cloud Agent 3_1_3",
+				"projectName": "CORE_API",
+				"message": "The operation \"api.resource.order-customer-insert.createOrder.dumpRequest\" failed.",
+				"operationEnteredTimestamp": 1532349722000,
+				"operationStartedTimestamp": 1532349722000,
+				"operationStatusTimestamp": 1532349722000,
+				"debugModeEnabled": false,
+				"debugFilePresent": false
+			},
+			"childRecords": []
+		}, {
+			"attributes": {
+				"operationInstanceGuid": "44d1706b-015b-4d22-b3ea-d42d7853f191",
+				"operationGuid": "f92d6e62-99b0-4820-8cc1-1071349861a9",
+				"operationName": "api.resource.order-customer-insert.onFailure",
+				"operationStatusId": 4,
+				"operationStatus": "SUCCESS",
+				"environmentId": "290462",
+				"environmentName": "development",
+				"agentId": "193008",
+				"agentName": "Jitterbit Cloud Agent 3_1_10",
+				"projectName": "CORE_API",
+				"message": "The operation \"api.resource.order-customer-insert.onFailure\" completed successfully.",
+				"operationEnteredTimestamp": 1532349065000,
+				"operationStartedTimestamp": 1532349065000,
+				"operationStatusTimestamp": 1532349065000,
+				"debugModeEnabled": false,
+				"debugFilePresent": false
+			},
+			"childRecords": []
+		}, {
+			"attributes": {
+				"operationInstanceGuid": "4e5155ae-5976-4a7e-bac3-2e202076bcc5",
+				"operationGuid": "096d8457-d58c-4af9-bc4e-4a01946c27c8",
+				"operationName": "common.onFailure",
+				"operationStatusId": 5,
+				"operationStatus": "SUCCESS WITH INFO",
+				"environmentId": "290462",
+				"environmentName": "development",
+				"agentId": "193008",
+				"agentName": "Jitterbit Cloud Agent 3_1_10",
+				"projectName": "CORE_API",
+				"message": "The operation \"common.onFailure\" completed successfully.",
+				"operationEnteredTimestamp": 1532349064000,
+				"operationStartedTimestamp": 1532349064000,
+				"operationStatusTimestamp": 1532349064000,
+				"debugModeEnabled": false,
+				"debugFilePresent": false
+			},
+			"childRecords": []
+		}, {
+			"attributes": {
+				"operationInstanceGuid": "55819dac-3681-4cee-a01a-a14e5380536a",
+				"parentInstanceGuid": "9cd857d8-85c5-4def-831b-d072333902d3",
+				"operationGuid": "5177359e-6dcc-4122-98b1-7c5f5f45fcad",
+				"operationName": "api.resource.order-customer-insert.process",
+				"operationStatusId": 7,
+				"operationStatus": "ERROR",
+				"environmentId": "290462",
+				"environmentName": "development",
+				"agentId": "193008",
+				"agentName": "Jitterbit Cloud Agent 3_1_10",
+				"projectName": "CORE_API",
+				"message": "The operation \"api.resource.order-customer-insert.process\" failed.",
+				"operationEnteredTimestamp": 1532349064000,
+				"operationStartedTimestamp": 1532349064000,
+				"operationStatusTimestamp": 1532349065000,
+				"debugModeEnabled": false,
+				"debugFilePresent": false
+			},
+			"childRecords": []
+		}, {
+			"attributes": {
+				"operationInstanceGuid": "1e946564-b55e-4cba-b080-c7d6e30c2fc2",
+				"operationGuid": "096d8457-d58c-4af9-bc4e-4a01946c27c8",
+				"operationName": "common.onFailure",
+				"operationStatusId": 5,
+				"operationStatus": "SUCCESS WITH INFO",
+				"environmentId": "290462",
+				"environmentName": "development",
+				"agentId": "174082",
+				"agentName": "Jitterbit Cloud Agent 3_1_5",
+				"projectName": "CORE_API",
+				"message": "The operation \"common.onFailure\" completed successfully.",
+				"operationEnteredTimestamp": 1532349063000,
+				"operationStartedTimestamp": 1532349063000,
+				"operationStatusTimestamp": 1532349063000,
+				"debugModeEnabled": false,
+				"debugFilePresent": false
+			},
+			"childRecords": []
+		}, {
+			"attributes": {
+				"operationInstanceGuid": "82351250-0565-41e8-a54b-9ee696a73f48",
+				"operationGuid": "f92d6e62-99b0-4820-8cc1-1071349861a9",
+				"operationName": "api.resource.order-customer-insert.onFailure",
+				"operationStatusId": 4,
+				"operationStatus": "SUCCESS",
+				"environmentId": "290462",
+				"environmentName": "development",
+				"agentId": "174082",
+				"agentName": "Jitterbit Cloud Agent 3_1_5",
+				"projectName": "CORE_API",
+				"message": "The operation \"api.resource.order-customer-insert.onFailure\" completed successfully.",
+				"operationEnteredTimestamp": 1532349063000,
+				"operationStartedTimestamp": 1532349063000,
+				"operationStatusTimestamp": 1532349063000,
+				"debugModeEnabled": false,
+				"debugFilePresent": false
+			},
+			"childRecords": []
+		}, {
+			"attributes": {
+				"operationInstanceGuid": "b1c67a46-7a79-4384-9e1f-c0c5da9b3eef",
+				"operationGuid": "f92d6e62-99b0-4820-8cc1-1071349861a9",
+				"operationName": "api.resource.order-customer-insert.onFailure",
+				"operationStatusId": 4,
+				"operationStatus": "SUCCESS",
+				"environmentId": "290462",
+				"environmentName": "development",
+				"agentId": "1542",
+				"agentName": "Jitterbit Cloud Agent 3_1_1",
+				"projectName": "CORE_API",
+				"message": "The operation \"api.resource.order-customer-insert.onFailure\" completed successfully.",
+				"operationEnteredTimestamp": 1532349063000,
+				"operationStartedTimestamp": 1532349063000,
+				"operationStatusTimestamp": 1532349063000,
+				"debugModeEnabled": false,
+				"debugFilePresent": false
+			},
+			"childRecords": []
+		}, {
+			"attributes": {
+				"operationInstanceGuid": "ef21a3b9-87f0-4d78-a06d-0468fab5254f",
+				"parentInstanceGuid": "83a77f5e-9841-49d1-8ae5-6765c2827f70",
+				"operationGuid": "5177359e-6dcc-4122-98b1-7c5f5f45fcad",
+				"operationName": "api.resource.order-customer-insert.process",
+				"operationStatusId": 7,
+				"operationStatus": "ERROR",
+				"environmentId": "290462",
+				"environmentName": "development",
+				"agentId": "174082",
+				"agentName": "Jitterbit Cloud Agent 3_1_5",
+				"projectName": "CORE_API",
+				"message": "The operation \"api.resource.order-customer-insert.process\" failed.",
+				"operationEnteredTimestamp": 1532349063000,
+				"operationStartedTimestamp": 1532349063000,
+				"operationStatusTimestamp": 1532349063000,
+				"debugModeEnabled": false,
+				"debugFilePresent": false
+			},
+			"childRecords": []
+		}, {
+			"attributes": {
+				"operationInstanceGuid": "fdc708e0-acec-47d3-b98e-1d6bb41bf1d5",
+				"parentInstanceGuid": "10bcceba-1146-4752-9203-96a9dad3bafb",
+				"operationGuid": "5177359e-6dcc-4122-98b1-7c5f5f45fcad",
+				"operationName": "api.resource.order-customer-insert.process",
+				"operationStatusId": 7,
+				"operationStatus": "ERROR",
+				"environmentId": "290462",
+				"environmentName": "development",
+				"agentId": "1542",
+				"agentName": "Jitterbit Cloud Agent 3_1_1",
+				"projectName": "CORE_API",
+				"message": "The operation \"api.resource.order-customer-insert.process\" failed.",
+				"operationEnteredTimestamp": 1532349063000,
+				"operationStartedTimestamp": 1532349063000,
+				"operationStatusTimestamp": 1532349063000,
+				"debugModeEnabled": false,
+				"debugFilePresent": false
+			},
+			"childRecords": []
+		}, {
+			"attributes": {
+				"operationInstanceGuid": "00f13a47-daa0-4277-8fe1-03726ebc9ff9",
+				"operationGuid": "096d8457-d58c-4af9-bc4e-4a01946c27c8",
+				"operationName": "common.onFailure",
+				"operationStatusId": 5,
+				"operationStatus": "SUCCESS WITH INFO",
+				"environmentId": "290462",
+				"environmentName": "development",
+				"agentId": "1542",
+				"agentName": "Jitterbit Cloud Agent 3_1_1",
+				"projectName": "CORE_API",
+				"message": "The operation \"common.onFailure\" completed successfully.",
+				"operationEnteredTimestamp": 1532349062000,
+				"operationStartedTimestamp": 1532349062000,
+				"operationStatusTimestamp": 1532349062000,
+				"debugModeEnabled": false,
+				"debugFilePresent": false
+			},
+			"childRecords": []
+		}, {
+			"attributes": {
+				"operationInstanceGuid": "7152860c-a898-40fb-9f7c-8474a6a6db14",
+				"parentInstanceGuid": "73e00abc-12f4-4008-8773-7eba2d6ab58a",
+				"operationGuid": "46fee563-118e-4423-a2c3-b16738b483e0",
+				"operationName": "harmony.api.analytics.debuglogs.request",
+				"operationStatusId": 5,
+				"operationStatus": "SUCCESS WITH INFO",
+				"environmentId": "255262",
+				"environmentName": "production",
+				"agentId": "212202",
+				"agentName": "Jitterbit Cloud Agent 3_1_11",
+				"projectName": "CORE_API",
+				"message": "The operation \"harmony.api.analytics.debuglogs.request\" completed successfully.",
+				"operationEnteredTimestamp": 1532349009000,
+				"operationStartedTimestamp": 1532349009000,
+				"operationStatusTimestamp": 1532349009000,
+				"debugModeEnabled": false,
+				"debugFilePresent": false
+			},
+			"childRecords": []
+		}
+	]
+}

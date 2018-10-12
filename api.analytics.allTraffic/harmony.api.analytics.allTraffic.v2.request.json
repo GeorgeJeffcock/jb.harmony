@@ -1,0 +1,7 @@
+{
+  "hitsBy": "string",
+  "orgId": "string",
+  "showBy": "string",
+  "timeRangeFrom": "string",
+  "timeRangeTo": "string"
+}

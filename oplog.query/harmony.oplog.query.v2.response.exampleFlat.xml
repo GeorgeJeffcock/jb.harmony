@@ -1,0 +1,86 @@
+<ns2:queryOperationLogResponse xmlns:ns2="http://api.jitterbit.com/opmgmt/log">
+   <status>true</status>
+   <operation>Query Operation Log</operation>
+   <records>
+      <attributes>
+         <operationInstanceGuid>a21667fc-dccb-4bbc-971d-85d82b7dafd5</operationInstanceGuid>
+         <parentInstanceGuid>71473447-e813-498f-9ca3-c6b247cc2bdc</parentInstanceGuid>
+         <operationGuid>ded5b678-f564-4717-8fd6-6491f4922794</operationGuid>
+         <operationName>jb.bp.externalize.operation2</operationName>
+         <operationStatusId>4</operationStatusId>
+         <operationStatus>SUCCESS</operationStatus>
+         <environmentId>307602</environmentId>
+         <environmentName>unpublished</environmentName>
+         <agentId>1547</agentId>
+         <agentName>Jitterbit Cloud Agent 3_1_2</agentName>
+         <projectName>myProjectToMonitor</projectName>
+         <message>The operation "jb.bp.externalize.operation2" completed successfully.</message>
+         <operationEnteredTimestamp>2018-09-26T12:53:46Z</operationEnteredTimestamp>
+         <operationStartedTimestamp>2018-09-26T12:53:46Z</operationStartedTimestamp>
+         <operationStatusTimestamp>2018-09-26T12:53:46Z</operationStatusTimestamp>
+         <debugModeEnabled>false</debugModeEnabled>
+         <debugFilePresent>false</debugFilePresent>
+      </attributes>
+   </records>
+   <records>
+      <attributes>
+         <operationInstanceGuid>71473447-e813-498f-9ca3-c6b247cc2bdc</operationInstanceGuid>
+         <operationGuid>4d0c6e06-c122-48a9-9289-a15b6dda5915</operationGuid>
+         <operationName>jb.bp.externalize.operationControllerA</operationName>
+         <operationStatusId>5</operationStatusId>
+         <operationStatus>SUCCESS WITH INFO</operationStatus>
+         <environmentId>307602</environmentId>
+         <environmentName>unpublished</environmentName>
+         <agentId>1547</agentId>
+         <agentName>Jitterbit Cloud Agent 3_1_2</agentName>
+         <projectName>myProjectToMonitor</projectName>
+         <message>The operation "jb.bp.externalize.operationControllerA" completed successfully.</message>
+         <operationEnteredTimestamp>2018-09-26T12:53:45.077Z</operationEnteredTimestamp>
+         <operationStartedTimestamp>2018-09-26T12:53:45Z</operationStartedTimestamp>
+         <operationStatusTimestamp>2018-09-26T12:53:46Z</operationStatusTimestamp>
+         <debugModeEnabled>false</debugModeEnabled>
+         <debugFilePresent>false</debugFilePresent>
+      </attributes>
+   </records>
+   <records>
+      <attributes>
+         <operationInstanceGuid>38b7310c-6a0a-4f68-9e26-0f9635643805</operationInstanceGuid>
+         <parentInstanceGuid>71473447-e813-498f-9ca3-c6b247cc2bdc</parentInstanceGuid>
+         <operationGuid>6dd2c5bd-e358-44c3-b42b-df32a85ec14d</operationGuid>
+         <operationName>jb.bp.externalize.operation1</operationName>
+         <operationStatusId>4</operationStatusId>
+         <operationStatus>SUCCESS</operationStatus>
+         <environmentId>307602</environmentId>
+         <environmentName>unpublished</environmentName>
+         <agentId>1547</agentId>
+         <agentName>Jitterbit Cloud Agent 3_1_2</agentName>
+         <projectName>myProjectToMonitor</projectName>
+         <message>The operation "jb.bp.externalize.operation1" completed successfully.</message>
+         <operationEnteredTimestamp>2018-09-26T12:53:45Z</operationEnteredTimestamp>
+         <operationStartedTimestamp>2018-09-26T12:53:45Z</operationStartedTimestamp>
+         <operationStatusTimestamp>2018-09-26T12:53:46Z</operationStatusTimestamp>
+         <debugModeEnabled>false</debugModeEnabled>
+         <debugFilePresent>false</debugFilePresent>
+      </attributes>
+   </records>
+   <records>
+      <attributes>
+         <operationInstanceGuid>d5957f94-9089-4da3-b0c7-21cd1918edf4</operationInstanceGuid>
+         <operationGuid>6dd2c5bd-e358-44c3-b42b-df32a85ec14d</operationGuid>
+         <operationName>jb.bp.externalize.operation1</operationName>
+         <operationStatusId>4</operationStatusId>
+         <operationStatus>SUCCESS</operationStatus>
+         <environmentId>307602</environmentId>
+         <environmentName>unpublished</environmentName>
+         <agentId>174092</agentId>
+         <agentName>Jitterbit Cloud Agent 3_1_6</agentName>
+         <projectName>myProjectToMonitor</projectName>
+         <message>The operation "jb.bp.externalize.operation1" completed successfully.</message>
+         <operationEnteredTimestamp>2018-09-26T12:53:00.220Z</operationEnteredTimestamp>
+         <operationStartedTimestamp>2018-09-26T12:53:01Z</operationStartedTimestamp>
+         <operationStatusTimestamp>2018-09-26T12:53:02Z</operationStatusTimestamp>
+         <debugModeEnabled>false</debugModeEnabled>
+         <debugFilePresent>false</debugFilePresent>
+      </attributes>
+   </records>
+</ns2:queryOperationLogResponse>

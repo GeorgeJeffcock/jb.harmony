@@ -1,0 +1,607 @@
+{
+  "info": {
+    "name": "Jitterbit Harmony Platform REST API",
+    "_postman_id": "90ac6e52-f200-46cf-8f5f-b13e3c304b7a",
+    "description": "Jitterbit Harmony Platform API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/"
+  },
+  "item": [
+    {
+      "name": "user-service-controller",
+      "description": "Endpoint for User Management",
+      "item": [
+        {
+          "id": "54def970-5127-4aac-837f-6cd75f0e34b9",
+          "name": "Authenticate user",
+          "request": {
+            "url": "https://emea-west.jitterbit.com/jitterbit-cloud-restful-service/user/login",
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "disabled": false
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"clientAwareIfHarmonyPasswordShouldBeProvided\": true,\r\n  \"clientProperties\": [\r\n    {\r\n      \"key\": \"key\",\r\n      \"value\": \"value\"\r\n    }\r\n  ],\r\n  \"deviceId\": \"deviceId\",\r\n  \"email\": \"email\",\r\n  \"password\": \"password\"\r\n}"
+            },
+            "description": "Note the authenticationToken and orgId corresponding to your OrgName received in response. <br> authenticationToken should be used as the value to the header named authToken"
+          },
+          "response": [
+            {
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "disabled": false
+                }
+              ],
+              "body": "{\r\n  \"authenticationToken\": \"authenticationToken\",\r\n  \"defaultOrgId\": \"defaultOrgId\",\r\n  \"errorCode\": \"errorCode\",\r\n  \"errorID\": \"errorID\",\r\n  \"errorMessage\": \"errorMessage\",\r\n  \"operation\": \"operation\",\r\n  \"orgAttrs\": [\r\n    {\r\n      \"orgId\": \"orgId\",\r\n      \"orgName\": \"orgName\",\r\n      \"orgZoneUrl\": \"orgZoneUrl\"\r\n    }\r\n  ],\r\n  \"serverUrl\": \"serverUrl\",\r\n  \"ssoLoginAttrs\": {\r\n    \"ssoEnabled\": true,\r\n    \"ssoOrgId\": \"ssoOrgId\",\r\n    \"ssoRequestUrl\": \"ssoRequestUrl\"\r\n  },\r\n  \"status\": true\r\n}",
+              "status": "OK",
+              "code": 201,
+              "name": "Response_201",
+              "id": "fdb71a25-3355-4e0b-b609-d165d0514630"
+            },
+            {
+              "status": "Unauthorized",
+              "code": 401,
+              "name": "Response_401",
+              "id": "3d60eb1e-8c35-4a68-9bc9-5a59ffad07b2"
+            },
+            {
+              "status": "Forbidden",
+              "code": 403,
+              "name": "Response_403",
+              "id": "768d961e-3b89-448f-8ead-8eed6ee123e9"
+            },
+            {
+              "status": "Not Found",
+              "code": 404,
+              "name": "Response_404",
+              "id": "3b481678-f3bc-4e5d-964e-ce4452140c25"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "op-log-service-controller",
+      "description": "Endpoint for Operation Log management",
+      "item": [
+        {
+          "id": "19c0ae8b-87a5-4e26-98c9-ac666341c62b",
+          "name": "List or filter the operation instance activity records",
+          "request": {
+            "url": "https://emea-west.jitterbit.com/jitterbit-cloud-restful-service/oplog/query",
+            "method": "PUT",
+            "header": [
+              {
+                "key": "authToken",
+                "value": "authToken",
+                "description": "Authentication token to authenticate/ authorize the user",
+                "disabled": false
+              },
+              {
+                "key": "authToken",
+                "value": "authToken",
+                "description": "",
+                "disabled": false
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "disabled": false
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"agentId\": [\r\n    \"agentId\"\r\n  ],\r\n  \"agentName\": [\r\n    \"agentName\"\r\n  ],\r\n  \"ascendSort\": true,\r\n  \"environmentId\": [\r\n    \"environmentId\"\r\n  ],\r\n  \"environmentName\": [\r\n    \"environmentName\"\r\n  ],\r\n  \"flatView\": true,\r\n  \"folderGuid\": [\r\n    \"folderGuid\"\r\n  ],\r\n  \"fromThisDate\": \"2018-10-12T07:56:36.6891777Z\",\r\n  \"includeSubOperations\": true,\r\n  \"lastActivityFromThisDate\": \"2018-10-12T07:56:36.7047733Z\",\r\n  \"lastActivityUntilThisDate\": \"2018-10-12T07:56:36.7047733Z\",\r\n  \"messageContains\": \"messageContains\",\r\n  \"noOfRowsToReturn\": 202,\r\n  \"offset\": 202,\r\n  \"operationGuid\": [\r\n    \"operationGuid\"\r\n  ],\r\n  \"operationInstanceGuid\": [\r\n    \"operationInstanceGuid\"\r\n  ],\r\n  \"operationName\": [\r\n    \"operationName\"\r\n  ],\r\n  \"organizationId\": \"organizationId\",\r\n  \"projectGuid\": [\r\n    \"projectGuid\"\r\n  ],\r\n  \"projectName\": [\r\n    \"projectName\"\r\n  ],\r\n  \"queryTimeOut\": 202,\r\n  \"sortByColumn\": \"sortByColumn\",\r\n  \"status\": [\r\n    -1\r\n  ],\r\n  \"untilThisDate\": \"2018-10-12T07:56:36.7047733Z\"\r\n}"
+            },
+            "description": "'https://success.jitterbit.com/display/DOC/Activities'\n1) Pull all the operation logs with their child operation logs for the requested organization.\n2) Organization ID is a required field that will provide all operation logs for that organization.\n3) Enter inputs in request body to filter operation logs of the requested organization."
+          },
+          "response": [
+            {
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "disabled": false
+                }
+              ],
+              "body": "{\r\n  \"errorCode\": \"errorCode\",\r\n  \"errorID\": \"errorID\",\r\n  \"errorMessage\": \"errorMessage\",\r\n  \"operation\": \"operation\",\r\n  \"records\": [\r\n    {\r\n      \"attributes\": {\r\n        \"agentId\": \"agentId\",\r\n        \"agentName\": \"agentName\",\r\n        \"debugFilePresent\": true,\r\n        \"debugModeEnabled\": true,\r\n        \"environmentId\": \"environmentId\",\r\n        \"environmentName\": \"environmentName\",\r\n        \"message\": \"message\",\r\n        \"operationEnteredTimestamp\": \"2018-10-12T07:56:36.7047733Z\",\r\n        \"operationGuid\": \"operationGuid\",\r\n        \"operationInstanceGuid\": \"operationInstanceGuid\",\r\n        \"operationName\": \"operationName\",\r\n        \"operationStartedTimestamp\": \"2018-10-12T07:56:36.7047733Z\",\r\n        \"operationStatus\": \"operationStatus\",\r\n        \"operationStatusId\": 202,\r\n        \"operationStatusTimestamp\": \"2018-10-12T07:56:36.7047733Z\",\r\n        \"parentInstanceGuid\": \"parentInstanceGuid\",\r\n        \"projectName\": \"projectName\"\r\n      },\r\n      \"childRecords\": [\r\n        {}\r\n      ]\r\n    }\r\n  ],\r\n  \"status\": true\r\n}",
+              "status": "OK",
+              "code": 201,
+              "name": "Response_201",
+              "id": "73997a81-f8df-46da-bfe2-c7b693dc1169"
+            },
+            {
+              "status": "Unauthorized",
+              "code": 401,
+              "name": "Response_401",
+              "id": "72de9407-7b97-4f0e-bd1a-e0cf8ebaf963"
+            },
+            {
+              "status": "Forbidden",
+              "code": 403,
+              "name": "Response_403",
+              "id": "f2fd9a8c-c46c-4132-bcdd-e6b8044b2059"
+            },
+            {
+              "status": "Not Found",
+              "code": 404,
+              "name": "Response_404",
+              "id": "5e794c0c-0ce2-4a86-b550-8739c7134485"
+            }
+          ]
+        },
+        {
+          "id": "05d71067-2cc4-4509-a795-e4a9f80ec9f9",
+          "name": "Details of the operation logs for an operation instance.",
+          "request": {
+            "url": {
+              "protocol": "https",
+              "host": "emea-west.jitterbit.com",
+              "path": [
+                "jitterbit-cloud-restful-service",
+                "oplog/detail/:opinstanceguid"
+              ],
+              "variable": [
+                {
+                  "id": "opinstanceguid",
+                  "value": "opinstanceguid",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "authToken",
+                "value": "authToken",
+                "description": "Authentication token to authenticate/ authorize the user",
+                "disabled": false
+              },
+              {
+                "key": "authToken",
+                "value": "authToken",
+                "description": "",
+                "disabled": false
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw"
+            },
+            "description": "For Operation Instance GUID use API to List or Filter operation logs -- /oplog/query"
+          },
+          "response": [
+            {
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "disabled": false
+                }
+              ],
+              "body": "{\r\n  \"errorCode\": \"errorCode\",\r\n  \"errorID\": \"errorID\",\r\n  \"errorMessage\": \"errorMessage\",\r\n  \"failedRecords\": 202,\r\n  \"filesProcessed\": 202,\r\n  \"mainMessage\": \"mainMessage\",\r\n  \"messageAndFieldName\": [\r\n    {\r\n      \"fieldName\": \"fieldName\",\r\n      \"message\": \"message\"\r\n    }\r\n  ],\r\n  \"operation\": \"operation\",\r\n  \"operationName\": \"operationName\",\r\n  \"resultFileCategoryAndGuid\": [\r\n    {\r\n      \"category\": 202,\r\n      \"fileGuid\": \"fileGuid\"\r\n    }\r\n  ],\r\n  \"sourceRecords\": 202,\r\n  \"status\": true,\r\n  \"successRecords\": 202,\r\n  \"targetRecords\": 202\r\n}",
+              "status": "OK",
+              "code": 200,
+              "name": "Response_200",
+              "id": "80c25655-9c07-4ed6-887a-34279e03a2af"
+            },
+            {
+              "status": "Unauthorized",
+              "code": 401,
+              "name": "Response_401",
+              "id": "b2455b12-d506-4f3f-9a72-4958fd47ea2d"
+            },
+            {
+              "status": "Forbidden",
+              "code": 403,
+              "name": "Response_403",
+              "id": "0d1dd798-faf3-4872-8379-95e3e8007f11"
+            },
+            {
+              "status": "Not Found",
+              "code": 404,
+              "name": "Response_404",
+              "id": "66135e2c-427b-4e92-9219-a9172edbcfeb"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "api-analytics-controller",
+      "description": "Endpoint for api analytics management",
+      "item": [
+        {
+          "id": "874085fd-1b23-4033-b7eb-522e97e200cc",
+          "name": "Get APIs all traffic",
+          "request": {
+            "url": "https://emea-west.jitterbit.com/jitterbit-cloud-restful-service/api/analytics/alltraffic",
+            "method": "PUT",
+            "header": [
+              {
+                "key": "authToken",
+                "value": "authToken",
+                "description": "Authentication token to authenticate/ authorize the user",
+                "disabled": false
+              },
+              {
+                "key": "authToken",
+                "value": "authToken",
+                "description": "",
+                "disabled": false
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "disabled": false
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"hitsBy\": \"hitsBy\",\r\n  \"orgId\": \"orgId\",\r\n  \"showBy\": \"showBy\",\r\n  \"timeRangeFrom\": \"timeRangeFrom\",\r\n  \"timeRangeTo\": \"timeRangeTo\"\r\n}"
+            },
+            "description": "Authentication Process is same as mention in Login API."
+          },
+          "response": [
+            {
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "disabled": false
+                }
+              ],
+              "body": "{\r\n  \"analyticsChartOutput\": [\r\n    {\r\n      \"api\": \"api\",\r\n      \"apiName\": \"apiName\",\r\n      \"name\": \"name\",\r\n      \"point\": 202.249831178808,\r\n      \"time\": 110\r\n    }\r\n  ],\r\n  \"errorCode\": \"errorCode\",\r\n  \"errorID\": \"errorID\",\r\n  \"errorMessage\": \"errorMessage\",\r\n  \"operation\": \"operation\",\r\n  \"status\": false\r\n}",
+              "status": "OK",
+              "code": 201,
+              "name": "Response_201",
+              "id": "8b217874-b12d-47b0-9e36-1cfc2ad1ba47"
+            },
+            {
+              "status": "Unauthorized",
+              "code": 401,
+              "name": "Response_401",
+              "id": "cadea5ea-16ad-4d6d-a31f-afba101757b7"
+            },
+            {
+              "status": "Forbidden",
+              "code": 403,
+              "name": "Response_403",
+              "id": "7b3bff89-801d-4bbe-b66c-68bf7b6417a1"
+            },
+            {
+              "status": "Not Found",
+              "code": 404,
+              "name": "Response_404",
+              "id": "ad6159f9-0b9f-4844-8ebf-35f7ea537279"
+            }
+          ]
+        },
+        {
+          "id": "c77ce30f-eefa-457e-a566-52ada90eb17d",
+          "name": "Get APIs debugging logs",
+          "request": {
+            "url": "https://emea-west.jitterbit.com/jitterbit-cloud-restful-service/api/analytics/debuglogs",
+            "method": "PUT",
+            "header": [
+              {
+                "key": "authToken",
+                "value": "authToken",
+                "description": "Authentication token to authenticate/ authorize the user",
+                "disabled": false
+              },
+              {
+                "key": "authToken",
+                "value": "authToken",
+                "description": "",
+                "disabled": false
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "disabled": false
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"ascendSort\": false,\r\n  \"clientTimeZone\": \"clientTimeZone\",\r\n  \"orgId\": \"orgId\",\r\n  \"pageNumber\": \"pageNumber\",\r\n  \"pageSize\": \"pageSize\",\r\n  \"queryString\": \"queryString\",\r\n  \"showMessages\": false,\r\n  \"sortByColumnName\": \"sortByColumnName\"\r\n}"
+            },
+            "description": "Authentication Process is same as mention in Login API.<br>\nhttps://success.jitterbit.com/display/DOC/API+Logs\nhttps://success.jitterbit.com/display/DOC/API+Analytics+%28Classic%29+%3E+View+Debug+Logs\n"
+          },
+          "response": [
+            {
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "disabled": false
+                }
+              ],
+              "body": "{\r\n  \"analyticsLogEntriesOutputs\": [\r\n    {\r\n      \"apiPayloadURL\": \"apiPayloadURL\",\r\n      \"downloadPayloadEnabled\": false,\r\n      \"envURLPrefix\": \"envURLPrefix\",\r\n      \"hasDebugPayload\": false,\r\n      \"httpRequestID\": \"httpRequestID\",\r\n      \"message\": \"message\",\r\n      \"orgURLPrefix\": \"orgURLPrefix\",\r\n      \"remoteAgent\": \"remoteAgent\",\r\n      \"remoteIP\": \"remoteIP\",\r\n      \"reqID\": \"reqID\",\r\n      \"reqMethod\": \"reqMethod\",\r\n      \"reqUri\": \"reqUri\",\r\n      \"requestTime\": \"requestTime\",\r\n      \"statusCode\": \"statusCode\",\r\n      \"time\": \"2018-10-12T07:56:36.7204074Z\"\r\n    }\r\n  ],\r\n  \"errorCode\": \"errorCode\",\r\n  \"errorID\": \"errorID\",\r\n  \"errorMessage\": \"errorMessage\",\r\n  \"operation\": \"operation\",\r\n  \"status\": false\r\n}",
+              "status": "OK",
+              "code": 201,
+              "name": "Response_201",
+              "id": "1930c9a1-981d-46f0-bdb4-a01da1a65d74"
+            },
+            {
+              "status": "Unauthorized",
+              "code": 401,
+              "name": "Response_401",
+              "id": "01d0b6ab-71f1-48fa-a1e6-a0d017a33c28"
+            },
+            {
+              "status": "Forbidden",
+              "code": 403,
+              "name": "Response_403",
+              "id": "3ff5df03-5e13-46a2-a4d7-13f416a957ee"
+            },
+            {
+              "status": "Not Found",
+              "code": 404,
+              "name": "Response_404",
+              "id": "0331c5ce-72b7-4c24-b61d-99c53692f55b"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "api-project-variables-controller",
+      "description": "Endpoint for api Project Variables",
+      "item": [
+        {
+          "id": "b525a6e6-a45f-4717-be46-3bd38cc881f0",
+          "name": "Update Api project variables by project variable id",
+          "request": {
+            "url": "https://emea-west.jitterbit.com/jitterbit-cloud-restful-service/api/apiprojectvariables/update",
+            "method": "PUT",
+            "header": [
+              {
+                "key": "authToken",
+                "value": "authToken",
+                "description": "Authentication token to authenticate/ authorize the user",
+                "disabled": false
+              },
+              {
+                "key": "authToken",
+                "value": "authToken",
+                "description": "",
+                "disabled": false
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "disabled": false
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"projectVariableDescription\": \"projectVariableDescription\",\r\n  \"projectVariableHideValue\": false,\r\n  \"projectVariableId\": \"projectVariableId\",\r\n  \"projectVariableLabel\": \"projectVariableLabel\",\r\n  \"projectVariableName\": \"projectVariableName\",\r\n  \"projectVariableValue\": \"projectVariableValue\"\r\n}"
+            },
+            "description": "Authentication Process is same as mention in Login API"
+          },
+          "response": [
+            {
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "disabled": false
+                }
+              ],
+              "body": "{\r\n  \"analyticsLogEntriesOutputs\": [\r\n    {\r\n      \"apiPayloadURL\": \"apiPayloadURL\",\r\n      \"downloadPayloadEnabled\": false,\r\n      \"envURLPrefix\": \"envURLPrefix\",\r\n      \"hasDebugPayload\": false,\r\n      \"httpRequestID\": \"httpRequestID\",\r\n      \"message\": \"message\",\r\n      \"orgURLPrefix\": \"orgURLPrefix\",\r\n      \"remoteAgent\": \"remoteAgent\",\r\n      \"remoteIP\": \"remoteIP\",\r\n      \"reqID\": \"reqID\",\r\n      \"reqMethod\": \"reqMethod\",\r\n      \"reqUri\": \"reqUri\",\r\n      \"requestTime\": \"requestTime\",\r\n      \"statusCode\": \"statusCode\",\r\n      \"time\": \"2018-10-12T07:56:36.7204074Z\"\r\n    }\r\n  ],\r\n  \"errorCode\": \"errorCode\",\r\n  \"errorID\": \"errorID\",\r\n  \"errorMessage\": \"errorMessage\",\r\n  \"operation\": \"operation\",\r\n  \"status\": false\r\n}",
+              "status": "OK",
+              "code": 201,
+              "name": "Response_201",
+              "id": "bf49b03b-6b29-41b2-bdf6-2b2aa58d5fed"
+            },
+            {
+              "status": "Unauthorized",
+              "code": 401,
+              "name": "Response_401",
+              "id": "7a28a97b-9c44-4ec5-a35c-add42fa1600d"
+            },
+            {
+              "status": "Forbidden",
+              "code": 403,
+              "name": "Response_403",
+              "id": "a6c1539e-cde1-4c7b-894d-ad5b700f738b"
+            },
+            {
+              "status": "Not Found",
+              "code": 404,
+              "name": "Response_404",
+              "id": "ec64f214-c9e4-4462-9253-5ff50ccd9769"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "job-control-service-controller",
+      "description": "Endpoint for Job Control Management",
+      "item": [
+        {
+          "id": "36cffb96-3fd1-492f-a4fd-1f2bd239201d",
+          "name": "Run the Operation.",
+          "request": {
+            "url": "https://emea-west.jitterbit.com/jitterbit-cloud-restful-service/jobcontrol/runoperation",
+            "method": "POST",
+            "header": [
+              {
+                "key": "authToken",
+                "value": "authToken",
+                "description": "Authentication token to authenticate/ authorize the user",
+                "disabled": false
+              },
+              {
+                "key": "authToken",
+                "value": "authToken",
+                "description": "",
+                "disabled": false
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "disabled": false
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"environmentId\": \"environmentId\",\r\n  \"operationGuid\": \"operationGuid\"\r\n}"
+            },
+            "description": "Authentication Process is same as mentioned in Login API."
+          },
+          "response": [
+            {
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "disabled": false
+                }
+              ],
+              "body": "{\r\n  \"environmentId\": \"environmentId\",\r\n  \"errorCode\": \"errorCode\",\r\n  \"errorID\": \"errorID\",\r\n  \"errorMessage\": \"errorMessage\",\r\n  \"opInstanceGuid\": \"opInstanceGuid\",\r\n  \"operation\": \"operation\",\r\n  \"operationGuid\": \"operationGuid\",\r\n  \"organizationId\": \"organizationId\",\r\n  \"status\": false,\r\n  \"submittedAt\": \"2018-10-12T07:56:36.7204074Z\"\r\n}",
+              "status": "OK",
+              "code": 201,
+              "name": "Response_201",
+              "id": "5685863f-275a-4530-902f-c73991defbe6"
+            },
+            {
+              "status": "Unauthorized",
+              "code": 401,
+              "name": "Response_401",
+              "id": "5911c0c4-c2a7-44d0-88a8-2b563f024ead"
+            },
+            {
+              "status": "Forbidden",
+              "code": 403,
+              "name": "Response_403",
+              "id": "99090066-fd81-4c09-b4a5-ed0a840e934a"
+            },
+            {
+              "status": "Not Found",
+              "code": 404,
+              "name": "Response_404",
+              "id": "0c381d2e-2c3a-4392-826e-bfe763008590"
+            }
+          ]
+        },
+        {
+          "id": "3add3d39-1b17-4fdc-a45e-98d869c38b93",
+          "name": "Run the Operation in an Environment.",
+          "request": {
+            "url": "https://emea-west.jitterbit.com/jitterbit-cloud-restful-service/jobcontrol/runenvironmentoperation",
+            "method": "POST",
+            "header": [
+              {
+                "key": "authToken",
+                "value": "authToken",
+                "description": "Authentication token to authenticate/ authorize the user",
+                "disabled": false
+              },
+              {
+                "key": "authToken",
+                "value": "authToken",
+                "description": "",
+                "disabled": false
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "disabled": false
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"environmentId\": \"environmentId\",\r\n  \"operationName\": \"operationName\",\r\n  \"projectName\": \"projectName\"\r\n}"
+            },
+            "description": "Authentication Process is same as mentioned in Login API."
+          },
+          "response": [
+            {
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "disabled": false
+                }
+              ],
+              "body": "{\r\n  \"environmentId\": \"environmentId\",\r\n  \"errorCode\": \"errorCode\",\r\n  \"errorID\": \"errorID\",\r\n  \"errorMessage\": \"errorMessage\",\r\n  \"opInstanceGuid\": \"opInstanceGuid\",\r\n  \"operation\": \"operation\",\r\n  \"operationGuid\": \"operationGuid\",\r\n  \"organizationId\": \"organizationId\",\r\n  \"status\": false,\r\n  \"submittedAt\": \"2018-10-12T07:56:36.7204074Z\"\r\n}",
+              "status": "OK",
+              "code": 201,
+              "name": "Response_201",
+              "id": "7f62e946-ce58-4fbe-afa4-acf36eb23da3"
+            },
+            {
+              "status": "Unauthorized",
+              "code": 401,
+              "name": "Response_401",
+              "id": "6a487da4-7502-47f7-991c-52f2a491a558"
+            },
+            {
+              "status": "Forbidden",
+              "code": 403,
+              "name": "Response_403",
+              "id": "16469074-0a12-4eee-985c-0e762f97c511"
+            },
+            {
+              "status": "Not Found",
+              "code": 404,
+              "name": "Response_404",
+              "id": "3a073552-98bd-4d97-9000-2702c8b2c13e"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

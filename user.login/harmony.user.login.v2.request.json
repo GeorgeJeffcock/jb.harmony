@@ -1,0 +1,10 @@
+{
+	"clientAwareIfHarmonyPasswordShouldBeProvided": true,
+	"clientProperties": [{
+		"key": "string",
+		"value": "string"
+	}],
+	"deviceId": "string",
+	"email": "string",
+	"password": "string"
+}

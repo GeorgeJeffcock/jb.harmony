@@ -1,0 +1,24 @@
+{
+	"analyticsLogEntriesOutputs": [{
+		"apiPayloadURL": "string",
+		"downloadPayloadEnabled": true,
+		"envURLPrefix": "string",
+		"hasDebugPayload": true,
+		"httpRequestID": "string",
+		"message": "string",
+		"orgURLPrefix": "string",
+		"remoteAgent": "string",
+		"remoteIP": "string",
+		"reqID": "string",
+		"reqMethod": "string",
+		"reqUri": "string",
+		"requestTime": "string",
+		"statusCode": "string",
+		"time": "2018-03-19T14:08:15.594Z"
+	}],
+	"errorCode": "string",
+	"errorID": "string",
+	"errorMessage": "string",
+	"operation": "string",
+	"status": true
+}

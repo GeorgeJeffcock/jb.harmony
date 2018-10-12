@@ -1,0 +1,17 @@
+{
+	"status": true,
+	"operation": "User login",
+	"authenticationToken": "3_4a5e8255-5d9d-444a-910a-f92943635ec6",
+	"serverUrl": "https://emea-west.jitterbit.com",
+	"orgAttrs": [{
+		"orgId": "53453",
+		"orgName": "54545435345",
+		"orgZoneUrl": "https://emea-west.jitterbit.com"
+	},
+	{
+		"orgId": "34345345",
+		"orgName": "dgdfgdfgdf",
+		"orgZoneUrl": "https://emea-west.jitterbit.com"
+	}],
+	"defaultOrgId": "199728"
+}

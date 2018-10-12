@@ -1,0 +1,7 @@
+{
+	"status": false,
+	"operation": "Get API Analytics All Traffic",
+	"errorCode": "NO_DATA_FOUND",
+	"errorMessage": "No data available for the selected time frame.",
+	"analyticsChartOutput": []
+}

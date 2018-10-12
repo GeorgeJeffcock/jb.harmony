@@ -1,0 +1,33 @@
+{
+  "errorCode": "string",
+  "errorID": "string",
+  "errorMessage": "string",
+  "operation": "string",
+  "records": [
+    {
+      "attributes": {
+        "agentId": "string",
+        "agentName": "string",
+        "debugFilePresent": true,
+        "debugModeEnabled": true,
+        "environmentId": "string",
+        "environmentName": "string",
+        "message": "string",
+        "operationEnteredTimestamp": "2018-07-23T12:32:26.432Z",
+        "operationGuid": "string",
+        "operationInstanceGuid": "string",
+        "operationName": "string",
+        "operationStartedTimestamp": "2018-07-23T12:32:26.432Z",
+        "operationStatus": "string",
+        "operationStatusId": 0,
+        "operationStatusTimestamp": "2018-07-23T12:32:26.432Z",
+        "parentInstanceGuid": "string",
+        "projectName": "string"
+      },
+      "childRecords": [
+        null
+      ]
+    }
+  ],
+  "status": true
+}

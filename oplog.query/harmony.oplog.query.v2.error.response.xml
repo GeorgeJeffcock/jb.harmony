@@ -1,0 +1,6 @@
+<ns2:queryOperationLogResponse xmlns:ns2="http://api.jitterbit.com/opmgmt/log">
+   <status>false</status>
+   <operation>Query Operation Log</operation>
+   <errorCode>INVALID_PROJ_ENV_USER_ID</errorCode>
+   <errorMessage>You do not have the privileges to access this Environment.</errorMessage>
+</ns2:queryOperationLogResponse>

@@ -1,0 +1,8 @@
+{
+	"status": false,
+	"operation": "Get API Analytics Debug Logs",
+	"errorCode": "GENERIC_EXCEPTION_OTHER",
+	"errorMessage": "An unknown exception has occurred",
+	"errorID": "7f24623ce725",
+	"analyticsLogEntriesOutputs": []
+}

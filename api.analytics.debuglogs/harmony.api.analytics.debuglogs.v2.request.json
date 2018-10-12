@@ -1,0 +1,10 @@
+{
+	"ascendSort": true,
+	"clientTimeZone": "string",
+	"orgId": "string",
+	"pageNumber": "string",
+	"pageSize": "string",
+	"queryString": "string",
+	"showMessages": true,
+	"sortByColumnName": "string"
+}

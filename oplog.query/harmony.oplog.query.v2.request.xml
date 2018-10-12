@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns7:queryOperationLog xmlns:ns2="http://api.jitterbit.com/user" xmlns:ns4="http://api.jitterbit.com/projectenv" xmlns:ns3="http://api.jitterbit.com/org" xmlns:ns6="http://api.jitterbit.com/opmgmt/jobcontrol" xmlns:ns5="http://api.jitterbit.com/SOAPService" xmlns:ns8="http://api.jitterbit.com/project" xmlns:ns7="http://api.jitterbit.com/opmgmt/log" xmlns:ns13="http://api.jitterbit.com/agentapi" xmlns:ns9="http://api.jitterbit.com/agent" xmlns:ns12="http://api.jitterbit.com/plugin" xmlns:ns11="http://api.jitterbit.com/projBackup" xmlns:ns10="http://api.jitterbit.com/filestore" xmlns:ns17="http://api.jitterbit.com/connector" xmlns:ns16="http://api.jitterbit.com/wsdlService" xmlns:ns15="http://api.jitterbit.com/netsuitesso" xmlns:ns14="http://api.jitterbit.com/apiServiceOp" xmlns:ns19="http://api.jitterbit.com/deployaudit" xmlns:ns18="http://api.jitterbit.com/productInstaller">
+	<agentId>string</agentId>
+	<agentName>string</agentName>
+	<ascendSort>true</ascendSort>
+	<environmentId>string</environmentId>
+	<environmentName>string</environmentName>
+	<flatView>true</flatView>
+	<folderGuid>string</folderGuid>
+	<fromThisDate>2018-09-26T15:03:39.365Z</fromThisDate>
+	<includeSubOperations>true</includeSubOperations>
+	<lastActivityFromThisDate>2018-09-26T15:03:39.365Z</lastActivityFromThisDate>
+	<lastActivityUntilThisDate>2018-09-26T15:03:39.365Z</lastActivityUntilThisDate>
+	<messageContains>string</messageContains>
+	<noOfRowsToReturn>0</noOfRowsToReturn>
+	<offset>0</offset>
+	<operationGuid>string</operationGuid>
+	<operationInstanceGuid>string</operationInstanceGuid>
+	<operationName>string</operationName>
+	<organizationId>string</organizationId>
+	<projectGuid>string</projectGuid>
+	<projectName>string</projectName>
+	<queryTimeOut>0</queryTimeOut>
+	<sortByColumn>string</sortByColumn>
+    <status>4</status>
+    <status>5</status>
+    <status>6</status>
+    <status>7</status>
+    <status>2</status>
+    <status>8</status>
+    <status>9</status>
+    <status>-1</status>
+    <status>11</status>
+	<status>-1</status>
+	<untilThisDate>2018-09-26T15:03:39.365Z</untilThisDate>
+</ns7:queryOperationLog>

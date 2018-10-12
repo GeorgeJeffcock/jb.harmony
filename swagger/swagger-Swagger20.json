@@ -1,0 +1,1369 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "V9.1.0.2-oas3",
+    "title": "Jitterbit Harmony Platform REST API",
+    "description": "Jitterbit Harmony Platform API",
+    "contact": {
+      "email": "support@jitterbit.com",
+      "name": "Jitterbit Support"
+    }
+  },
+  "host": "emea-west.jitterbit.com",
+  "basePath": "/jitterbit-cloud-restful-service",
+  "securityDefinitions": {
+    "authToken": {
+      "type": "apiKey",
+      "description": "",
+      "name": "authToken",
+      "in": "header"
+    }
+  },
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/user/login": {
+      "put": {
+        "description": "Note the authenticationToken and orgId corresponding to your OrgName received in response. <br> authenticationToken should be used as the value to the header named authToken",
+        "summary": "Authenticate user",
+        "tags": [
+          "user-service-controller"
+        ],
+        "operationId": "UserLoginPut",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "description": "Enter user credential. Note that clientProperties and deviceId are not required<br>\n  {\n  \"email\": \"myRegisterEmail\",\n  \"password\": \"myPassword\"\n  }",
+            "schema": {
+              "$ref": "#/definitions/Login"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/LoginResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/oplog/query": {
+      "put": {
+        "description": "'https://success.jitterbit.com/display/DOC/Activities'\n1) Pull all the operation logs with their child operation logs for the requested organization.\n2) Organization ID is a required field that will provide all operation logs for that organization.\n3) Enter inputs in request body to filter operation logs of the requested organization.",
+        "summary": "List or filter the operation instance activity records",
+        "tags": [
+          "op-log-service-controller"
+        ],
+        "operationId": "OplogQueryPut",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "description": "Payload to filter the operation logs",
+            "schema": {
+              "$ref": "#/definitions/QueryOperationLog"
+            }
+          },
+          {
+            "name": "authToken",
+            "in": "header",
+            "required": false,
+            "type": "string",
+            "description": "Authentication token to authenticate/ authorize the user"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/QueryOperationLogResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "security": [
+          {
+            "authToken": []
+          }
+        ]
+      }
+    },
+    "/oplog/detail/{opinstanceguid}": {
+      "get": {
+        "description": "For Operation Instance GUID use API to List or Filter operation logs -- /oplog/query",
+        "summary": "Details of the operation logs for an operation instance.",
+        "tags": [
+          "op-log-service-controller"
+        ],
+        "operationId": "OplogDetailByOpinstanceguidGet",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "opinstanceguid",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Operation Instance GUID"
+          },
+          {
+            "name": "authToken",
+            "in": "header",
+            "required": false,
+            "type": "string",
+            "description": "Authentication token to authenticate/ authorize the user"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/DetailOperationLogResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "security": [
+          {
+            "authToken": []
+          }
+        ]
+      }
+    },
+    "/api/analytics/alltraffic": {
+      "put": {
+        "description": "Authentication Process is same as mention in Login API.",
+        "summary": "Get APIs all traffic",
+        "tags": [
+          "api-analytics-controller"
+        ],
+        "operationId": "ApiAnalyticsAlltrafficPut",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authToken",
+            "in": "header",
+            "required": false,
+            "type": "string",
+            "description": "Authentication token to authenticate/ authorize the user"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "description": "Analytics Chart Input",
+            "schema": {
+              "$ref": "#/definitions/AnalyticsChartInput"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/AnalyticsChartResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "security": [
+          {
+            "authToken": []
+          }
+        ]
+      }
+    },
+    "/api/analytics/debuglogs": {
+      "put": {
+        "description": "Authentication Process is same as mention in Login API.<br>\nhttps://success.jitterbit.com/display/DOC/API+Logs\nhttps://success.jitterbit.com/display/DOC/API+Analytics+%28Classic%29+%3E+View+Debug+Logs\n",
+        "summary": "Get APIs debugging logs",
+        "tags": [
+          "api-analytics-controller"
+        ],
+        "operationId": "ApiAnalyticsDebuglogsPut",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authToken",
+            "in": "header",
+            "required": false,
+            "type": "string",
+            "description": "Authentication token to authenticate/ authorize the user"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "description": "Analytics Chart Input",
+            "schema": {
+              "$ref": "#/definitions/AnalyticsLogInput"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/AnalyticsLogEntriesResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "security": [
+          {
+            "authToken": []
+          }
+        ]
+      }
+    },
+    "/api/apiprojectvariables/update": {
+      "put": {
+        "description": "Authentication Process is same as mention in Login API",
+        "summary": "Update Api project variables by project variable id",
+        "tags": [
+          "api-project-variables-controller"
+        ],
+        "operationId": "ApiApiprojectvariablesUpdatePut",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authToken",
+            "in": "header",
+            "required": false,
+            "type": "string",
+            "description": "Authentication token to authenticate/ authorize the user"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "description": "updateProjectVariables",
+            "schema": {
+              "$ref": "#/definitions/ProjectVariablesInput"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/AnalyticsLogEntriesResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "security": [
+          {
+            "authToken": []
+          }
+        ]
+      }
+    },
+    "/jobcontrol/runoperation": {
+      "post": {
+        "description": "Authentication Process is same as mentioned in Login API.",
+        "summary": "Run the Operation.",
+        "tags": [
+          "job-control-service-controller"
+        ],
+        "operationId": "JobcontrolRunoperationPost",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authToken",
+            "in": "header",
+            "required": false,
+            "type": "string",
+            "description": "Authentication token to authenticate/ authorize the user"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "description": "Environment Id and Operation GUID",
+            "schema": {
+              "$ref": "#/definitions/RunOperation"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RunOperationResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "security": [
+          {
+            "authToken": []
+          }
+        ]
+      }
+    },
+    "/jobcontrol/runenvironmentoperation": {
+      "post": {
+        "description": "Authentication Process is same as mentioned in Login API.",
+        "summary": "Run the Operation in an Environment.",
+        "tags": [
+          "job-control-service-controller"
+        ],
+        "operationId": "JobcontrolRunenvironmentoperationPost",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authToken",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Authentication token to authenticate/ authorize the user"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "description": "Environment Id, Project Name and Operation Name",
+            "schema": {
+              "$ref": "#/definitions/RunOperationInEnvironment"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RunOperationResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "security": [
+          {
+            "authToken": []
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "Region": {
+      "title": "region",
+      "example": "emea-west",
+      "type": "string",
+      "enum": [
+        "emea-west",
+        "na-east"
+      ]
+    },
+    "Login": {
+      "title": "Login",
+      "type": "object",
+      "properties": {
+        "clientAwareIfHarmonyPasswordShouldBeProvided": {
+          "description": "",
+          "type": "boolean"
+        },
+        "clientProperties": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Property"
+          }
+        },
+        "deviceId": {
+          "description": "",
+          "type": "string"
+        },
+        "email": {
+          "description": "",
+          "type": "string"
+        },
+        "password": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "email",
+        "password"
+      ]
+    },
+    "Property": {
+      "title": "Property",
+      "type": "object",
+      "properties": {
+        "key": {
+          "description": "",
+          "type": "string"
+        },
+        "value": {
+          "description": "",
+          "type": "string"
+        }
+      }
+    },
+    "LoginResponse": {
+      "title": "LoginResponse",
+      "type": "object",
+      "properties": {
+        "authenticationToken": {
+          "description": "",
+          "type": "string"
+        },
+        "defaultOrgId": {
+          "description": "",
+          "type": "string"
+        },
+        "errorCode": {
+          "description": "",
+          "type": "string"
+        },
+        "errorID": {
+          "description": "",
+          "type": "string"
+        },
+        "errorMessage": {
+          "description": "",
+          "type": "string"
+        },
+        "operation": {
+          "description": "",
+          "type": "string"
+        },
+        "orgAttrs": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/OrgAttrs"
+          }
+        },
+        "serverUrl": {
+          "description": "",
+          "type": "string"
+        },
+        "ssoLoginAttrs": {
+          "$ref": "#/definitions/SsoLoginAttrs"
+        },
+        "status": {
+          "description": "",
+          "type": "boolean"
+        }
+      }
+    },
+    "OrgAttrs": {
+      "title": "OrgAttrs",
+      "type": "object",
+      "properties": {
+        "orgId": {
+          "description": "",
+          "type": "string"
+        },
+        "orgName": {
+          "description": "",
+          "type": "string"
+        },
+        "orgZoneUrl": {
+          "description": "",
+          "type": "string"
+        }
+      }
+    },
+    "SsoLoginAttrs": {
+      "title": "SsoLoginAttrs",
+      "type": "object",
+      "properties": {
+        "ssoEnabled": {
+          "description": "",
+          "type": "boolean"
+        },
+        "ssoOrgId": {
+          "description": "",
+          "type": "string"
+        },
+        "ssoRequestUrl": {
+          "description": "",
+          "type": "string"
+        }
+      }
+    },
+    "QueryOperationLog": {
+      "title": "QueryOperationLog",
+      "type": "object",
+      "properties": {
+        "agentId": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "agentName": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "ascendSort": {
+          "description": "",
+          "type": "boolean"
+        },
+        "environmentId": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "environmentName": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "flatView": {
+          "description": "",
+          "type": "boolean"
+        },
+        "folderGuid": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "fromThisDate": {
+          "description": "",
+          "type": "string",
+          "format": "date-time"
+        },
+        "includeSubOperations": {
+          "description": "",
+          "type": "boolean"
+        },
+        "lastActivityFromThisDate": {
+          "description": "",
+          "type": "string",
+          "format": "date-time"
+        },
+        "lastActivityUntilThisDate": {
+          "description": "",
+          "type": "string",
+          "format": "date-time"
+        },
+        "messageContains": {
+          "description": "",
+          "type": "string"
+        },
+        "noOfRowsToReturn": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "offset": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "operationGuid": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "operationInstanceGuid": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "operationName": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "organizationId": {
+          "description": "",
+          "type": "string"
+        },
+        "projectGuid": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "projectName": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "queryTimeOut": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "sortByColumn": {
+          "description": "",
+          "type": "string"
+        },
+        "status": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Status"
+          },
+          "uniqueItems": true
+        },
+        "untilThisDate": {
+          "description": "",
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "noOfRowsToReturn"
+      ]
+    },
+    "Status": {
+      "title": "Status",
+      "description": "-1=Invalid/Unknown\n0=Submitted\n1=Pending\n2=Cancelled\n3=Running\n4=Success\n5=Success with Info\n6=Success with Warning\n7=Error\n8=Cancel Requested\n9=Success with Child Error\n10=Received\n11=SOAP Fault",
+      "example": -1,
+      "type": "integer",
+      "format": "int32",
+      "enum": [
+        "-1",
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11"
+      ]
+    },
+    "QueryOperationLogResponse": {
+      "title": "QueryOperationLogResponse",
+      "type": "object",
+      "properties": {
+        "errorCode": {
+          "description": "",
+          "type": "string"
+        },
+        "errorID": {
+          "description": "",
+          "type": "string"
+        },
+        "errorMessage": {
+          "description": "",
+          "type": "string"
+        },
+        "operation": {
+          "description": "",
+          "type": "string"
+        },
+        "records": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/OpLogRecord"
+          }
+        },
+        "status": {
+          "description": "",
+          "type": "boolean"
+        }
+      }
+    },
+    "OpLogRecord": {
+      "title": "OpLogRecord",
+      "type": "object",
+      "properties": {
+        "attributes": {
+          "$ref": "#/definitions/OpLogAttrs"
+        },
+        "childRecords": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "OpLogAttrs": {
+      "title": "OpLogAttrs",
+      "type": "object",
+      "properties": {
+        "agentId": {
+          "description": "",
+          "type": "string"
+        },
+        "agentName": {
+          "description": "",
+          "type": "string"
+        },
+        "debugFilePresent": {
+          "description": "",
+          "type": "boolean"
+        },
+        "debugModeEnabled": {
+          "description": "",
+          "type": "boolean"
+        },
+        "environmentId": {
+          "description": "",
+          "type": "string"
+        },
+        "environmentName": {
+          "description": "",
+          "type": "string"
+        },
+        "message": {
+          "description": "",
+          "type": "string"
+        },
+        "operationEnteredTimestamp": {
+          "description": "",
+          "type": "string",
+          "format": "date-time"
+        },
+        "operationGuid": {
+          "description": "",
+          "type": "string"
+        },
+        "operationInstanceGuid": {
+          "description": "",
+          "type": "string"
+        },
+        "operationName": {
+          "description": "",
+          "type": "string"
+        },
+        "operationStartedTimestamp": {
+          "description": "",
+          "type": "string",
+          "format": "date-time"
+        },
+        "operationStatus": {
+          "description": "",
+          "type": "string"
+        },
+        "operationStatusId": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "operationStatusTimestamp": {
+          "description": "",
+          "type": "string",
+          "format": "date-time"
+        },
+        "parentInstanceGuid": {
+          "description": "",
+          "type": "string"
+        },
+        "projectName": {
+          "description": "",
+          "type": "string"
+        }
+      }
+    },
+    "DetailOperationLogResponse": {
+      "title": "DetailOperationLogResponse",
+      "type": "object",
+      "properties": {
+        "errorCode": {
+          "description": "",
+          "type": "string"
+        },
+        "errorID": {
+          "description": "",
+          "type": "string"
+        },
+        "errorMessage": {
+          "description": "",
+          "type": "string"
+        },
+        "failedRecords": {
+          "description": "",
+          "type": "integer",
+          "format": "int64"
+        },
+        "filesProcessed": {
+          "description": "",
+          "type": "integer",
+          "format": "int64"
+        },
+        "mainMessage": {
+          "description": "",
+          "type": "string"
+        },
+        "messageAndFieldName": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MessageAndFieldName"
+          }
+        },
+        "operation": {
+          "description": "",
+          "type": "string"
+        },
+        "operationName": {
+          "description": "",
+          "type": "string"
+        },
+        "resultFileCategoryAndGuid": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ResultFileCategoryAndGuid"
+          }
+        },
+        "sourceRecords": {
+          "description": "",
+          "type": "integer",
+          "format": "int64"
+        },
+        "status": {
+          "description": "",
+          "type": "boolean"
+        },
+        "successRecords": {
+          "description": "",
+          "type": "integer",
+          "format": "int64"
+        },
+        "targetRecords": {
+          "description": "",
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "MessageAndFieldName": {
+      "title": "MessageAndFieldName",
+      "type": "object",
+      "properties": {
+        "fieldName": {
+          "description": "",
+          "type": "string"
+        },
+        "message": {
+          "description": "",
+          "type": "string"
+        }
+      }
+    },
+    "ResultFileCategoryAndGuid": {
+      "title": "ResultFileCategoryAndGuid",
+      "type": "object",
+      "properties": {
+        "category": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "fileGuid": {
+          "description": "",
+          "type": "string"
+        }
+      }
+    },
+    "AnalyticsChartInput": {
+      "title": "AnalyticsChartInput",
+      "type": "object",
+      "properties": {
+        "hitsBy": {
+          "description": "",
+          "type": "string"
+        },
+        "orgId": {
+          "description": "",
+          "type": "string"
+        },
+        "showBy": {
+          "description": "",
+          "type": "string"
+        },
+        "timeRangeFrom": {
+          "description": "",
+          "type": "string"
+        },
+        "timeRangeTo": {
+          "description": "",
+          "type": "string"
+        }
+      }
+    },
+    "AnalyticsChartResponse": {
+      "title": "AnalyticsChartResponse",
+      "type": "object",
+      "properties": {
+        "analyticsChartOutput": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AnalyticsChartOutput"
+          }
+        },
+        "errorCode": {
+          "description": "",
+          "type": "string"
+        },
+        "errorID": {
+          "description": "",
+          "type": "string"
+        },
+        "errorMessage": {
+          "description": "",
+          "type": "string"
+        },
+        "operation": {
+          "description": "",
+          "type": "string"
+        },
+        "status": {
+          "description": "",
+          "type": "boolean"
+        }
+      }
+    },
+    "AnalyticsChartOutput": {
+      "title": "AnalyticsChartOutput",
+      "type": "object",
+      "properties": {
+        "api": {
+          "description": "",
+          "type": "string"
+        },
+        "apiName": {
+          "description": "",
+          "type": "string"
+        },
+        "name": {
+          "description": "",
+          "type": "string"
+        },
+        "point": {
+          "description": "",
+          "type": "number",
+          "format": "double"
+        },
+        "time": {
+          "description": "",
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "AnalyticsLogInput": {
+      "title": "AnalyticsLogInput",
+      "type": "object",
+      "properties": {
+        "ascendSort": {
+          "description": "",
+          "type": "boolean"
+        },
+        "clientTimeZone": {
+          "description": "",
+          "type": "string"
+        },
+        "orgId": {
+          "description": "",
+          "type": "string"
+        },
+        "pageNumber": {
+          "description": "",
+          "type": "string"
+        },
+        "pageSize": {
+          "description": "",
+          "type": "string"
+        },
+        "queryString": {
+          "description": "'https://success.jitterbit.com/display/DOC/API+Logs#APILogs-Search'\n'time >= 10/08/2018 08:05:50'\n'UTC time MM/DD/YYYY HH:MM:SS'\n'e.g. time<=MM/dd/yyyy hh:mm:ss; statuscode=404; requestid=fl9KRyjM%; requestmethod=GET; requesturi=%acme2.jitterbit.net%; responsetime>5; sourceip=14.141%; sourceapp=Mozilla%; message=%REJECT%'",
+          "type": "string"
+        },
+        "showMessages": {
+          "description": "",
+          "type": "boolean"
+        },
+        "sortByColumnName": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "orgId"
+      ]
+    },
+    "AnalyticsLogEntriesResponse": {
+      "title": "AnalyticsLogEntriesResponse",
+      "type": "object",
+      "properties": {
+        "analyticsLogEntriesOutputs": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AnalyticsLogEntriesOutput"
+          }
+        },
+        "errorCode": {
+          "description": "",
+          "type": "string"
+        },
+        "errorID": {
+          "description": "",
+          "type": "string"
+        },
+        "errorMessage": {
+          "description": "",
+          "type": "string"
+        },
+        "operation": {
+          "description": "",
+          "type": "string"
+        },
+        "status": {
+          "description": "",
+          "type": "boolean"
+        }
+      }
+    },
+    "AnalyticsLogEntriesOutput": {
+      "title": "AnalyticsLogEntriesOutput",
+      "type": "object",
+      "properties": {
+        "apiPayloadURL": {
+          "description": "",
+          "type": "string"
+        },
+        "downloadPayloadEnabled": {
+          "description": "",
+          "type": "boolean"
+        },
+        "envURLPrefix": {
+          "description": "",
+          "type": "string"
+        },
+        "hasDebugPayload": {
+          "description": "",
+          "type": "boolean"
+        },
+        "httpRequestID": {
+          "description": "",
+          "type": "string"
+        },
+        "message": {
+          "description": "",
+          "type": "string"
+        },
+        "orgURLPrefix": {
+          "description": "",
+          "type": "string"
+        },
+        "remoteAgent": {
+          "description": "",
+          "type": "string"
+        },
+        "remoteIP": {
+          "description": "",
+          "type": "string"
+        },
+        "reqID": {
+          "description": "",
+          "type": "string"
+        },
+        "reqMethod": {
+          "description": "",
+          "type": "string"
+        },
+        "reqUri": {
+          "description": "",
+          "type": "string"
+        },
+        "requestTime": {
+          "description": "",
+          "type": "string"
+        },
+        "statusCode": {
+          "description": "",
+          "type": "string"
+        },
+        "time": {
+          "description": "",
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "ProjectVariablesInput": {
+      "title": "ProjectVariablesInput",
+      "type": "object",
+      "properties": {
+        "projectVariableDescription": {
+          "description": "",
+          "type": "string"
+        },
+        "projectVariableHideValue": {
+          "description": "",
+          "type": "boolean"
+        },
+        "projectVariableId": {
+          "description": "",
+          "type": "string"
+        },
+        "projectVariableLabel": {
+          "description": "",
+          "type": "string"
+        },
+        "projectVariableName": {
+          "description": "",
+          "type": "string"
+        },
+        "projectVariableValue": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "projectVariableId"
+      ]
+    },
+    "RunOperation": {
+      "title": "RunOperation",
+      "type": "object",
+      "properties": {
+        "environmentId": {
+          "description": "",
+          "type": "string"
+        },
+        "operationGuid": {
+          "description": "",
+          "type": "string"
+        }
+      }
+    },
+    "RunOperationResponse": {
+      "title": "RunOperationResponse",
+      "type": "object",
+      "properties": {
+        "environmentId": {
+          "description": "",
+          "type": "string"
+        },
+        "errorCode": {
+          "description": "",
+          "type": "string"
+        },
+        "errorID": {
+          "description": "",
+          "type": "string"
+        },
+        "errorMessage": {
+          "description": "",
+          "type": "string"
+        },
+        "opInstanceGuid": {
+          "description": "",
+          "type": "string"
+        },
+        "operation": {
+          "description": "",
+          "type": "string"
+        },
+        "operationGuid": {
+          "description": "",
+          "type": "string"
+        },
+        "organizationId": {
+          "description": "",
+          "type": "string"
+        },
+        "status": {
+          "description": "",
+          "type": "boolean"
+        },
+        "submittedAt": {
+          "description": "",
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "RunOperationInEnvironment": {
+      "title": "RunOperationInEnvironment",
+      "type": "object",
+      "properties": {
+        "environmentId": {
+          "description": "",
+          "type": "string"
+        },
+        "operationName": {
+          "description": "",
+          "type": "string"
+        },
+        "projectName": {
+          "description": "",
+          "type": "string"
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "user-service-controller",
+      "description": "Endpoint for User Management"
+    },
+    {
+      "name": "op-log-service-controller",
+      "description": "Endpoint for Operation Log management"
+    },
+    {
+      "name": "api-analytics-controller",
+      "description": "Endpoint for api analytics management"
+    },
+    {
+      "name": "api-project-variables-controller",
+      "description": "Endpoint for api Project Variables"
+    },
+    {
+      "name": "job-control-service-controller",
+      "description": "Endpoint for Job Control Management"
+    }
+  ]
+}

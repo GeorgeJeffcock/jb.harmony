@@ -1,0 +1,12 @@
+{
+  "environmentId": "string",
+  "errorCode": "string",
+  "errorID": "string",
+  "errorMessage": "string",
+  "opInstanceGuid": "string",
+  "operation": "string",
+  "operationGuid": "string",
+  "organizationId": "string",
+  "status": true,
+  "submittedAt": "2018-09-26T10:52:54.565Z"
+}

@@ -1,0 +1,6 @@
+{
+   "status": false,
+   "operation": "Update project variable",
+   "errorCode": "PROJ_VAR_NOT_EXIST",
+   "errorMessage": "The Project Variable you entered does not exists.-"
+}

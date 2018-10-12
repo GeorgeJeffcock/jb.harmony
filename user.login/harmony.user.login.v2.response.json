@@ -1,0 +1,20 @@
+{
+	"authenticationToken": "string",
+	"defaultOrgId": "string",
+	"errorCode": "string",
+	"errorID": "string",
+	"errorMessage": "string",
+	"operation": "string",
+	"orgAttrs": [{
+		"orgId": "string",
+		"orgName": "string",
+		"orgZoneUrl": "string"
+	}],
+	"serverUrl": "string",
+	"ssoLoginAttrs": {
+		"ssoEnabled": true,
+		"ssoOrgId": "string",
+		"ssoRequestUrl": "string"
+	},
+	"status": true
+}
